@@ -140,7 +140,7 @@ export default function Home() {
           </div>
 
           {/* Bio + Portrait */}
-          <div className="reveal grid lg:grid-cols-2 gap-16 mb-24 items-start">
+          <div className="reveal grid lg:grid-cols-2 gap-16 mb-24 items-start min-h-[400px]">
             <div className="space-y-5 text-[#777] text-lg leading-relaxed">
               <p>
                 I'm a multidisciplinary developer and designer with a passion for
@@ -173,18 +173,22 @@ export default function Home() {
             </div>
 
             {/* Portrait placeholder */}
-            <div className="relative aspect-[4/5] bg-white/2 border border-white/7 overflow-hidden max-w-xs lg:ml-auto">
+            <div className="relative w-full max-w-xs h-[400px] bg-white/5 border border-white/10 overflow-hidden lg:ml-auto">
               <div className="absolute inset-0 flex items-end p-6">
                 <div className="space-y-1">
-                  <p className="font-display text-2xl text-white">Adrian Adora</p>
-                  <p className="text-xs tracking-[0.2em] uppercase text-[#d4af6e]">Developer & Designer</p>
+                  <p className="font-display text-2xl text-white">Adrian</p>
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#d4af6e]">
+                    Developer & Designer
+                  </p>
                 </div>
               </div>
+
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-24 h-24 rounded-full border border-white/10 flex items-center justify-center">
                   <span className="text-[#333] text-xs tracking-widest">Photo</span>
                 </div>
               </div>
+
               <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4af6e] via-[#d4af6e]/50 to-transparent" />
             </div>
           </div>
@@ -198,7 +202,7 @@ export default function Home() {
               {timeline.map((t, i) => (
                 <div
                   key={i}
-                  className="reveal group border-t border-white/7 py-7 grid grid-cols-[70px_1fr] md:grid-cols-[100px_1fr] gap-8 items-center hover:bg-white/1 transition-colors px-2 -mx-2"
+                  className="reveal group border-t border-white/10 py-7 grid grid-cols-[70px_1fr] md:grid-cols-[100px_1fr] gap-8 items-center hover:bg-white/1 transition-colors px-2 -mx-2"
                   style={{ transitionDelay: `${i * 60}ms` }}
                 >
                   <span className="font-display text-xl text-[#d4af6e]/40 group-hover:text-[#d4af6e]/70 transition-colors duration-300">
@@ -212,7 +216,7 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-              <div className="border-t border-white/7" />
+              <div className="border-t border-white/10" />
             </div>
           </div>
         </div>
@@ -238,7 +242,7 @@ export default function Home() {
             {projects.map((p, i) => (
               <div
                 key={p.num}
-                className="reveal group border-t border-white/8 py-10 grid md:grid-cols-[80px_1fr_auto] gap-6 md:gap-12 items-start hover:bg-white/2 transition-colors duration-300 cursor-pointer px-4 -mx-4"
+                className="reveal group border-t border-white/8 py-10 grid md:grid-cols-[80px_1fr_auto] gap-6 md:gap-12 items-start hover:bg-white/5 transition-colors duration-300 cursor-pointer px-4 -mx-4"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <span className="font-display text-4xl text-[#d4af6e]/30 group-hover:text-[#d4af6e]/70 transition-colors duration-300">
