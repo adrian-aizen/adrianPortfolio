@@ -12,6 +12,10 @@ function useReveal() {
     return () => io.disconnect();
   }, []);
 }
+
+const timeline = [
+  { year: "2026", role: "B.S. Information Technology Undergraduate", place: "University of the Cordilleras" },
+];
  
 /* ── project data ── */
 const projects = [
@@ -40,6 +44,7 @@ const skills = [
   "HTML5", "CSS3", "JavaScript", "TypeScript","Node.js", "Tailwind CSS",
   "MongoDB", "MySQL", "Git", "Laravel", "PHP",
 ];
+
  
 export default function Home() {
   useReveal();
@@ -82,7 +87,7 @@ export default function Home() {
  
             <div className="hero-cta flex flex-wrap gap-4 pt-2">
               <a
-                href="#work"
+                href="#projects"
                 className="px-8 py-3.5 bg-[#d4af6e] text-[#0e0e0e] text-sm tracking-[0.15em] uppercase font-semibold hover:bg-white transition-colors duration-300"
               >
                 View Work
@@ -116,9 +121,104 @@ export default function Home() {
           ))}
         </div>
       </div>
- 
+
+      {/* ════════════ ABOUT ME ════════════ */}
+      <section id="about" className="py-32 px-6 md:px-16 lg:px-24 relative overflow-hidden">
+        {/* Subtle side glow */}
+        <div className="pointer-events-none absolute right-0 top-1/3 w-[400px] h-[400px] bg-[#d4af6e]/4 blur-[120px] rounded-full" />
+
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="reveal mb-20 space-y-3">
+            <p className="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#d4af6e]">
+              <span className="w-8 h-px bg-[#d4af6e]" /> About Me
+            </p>
+            <h2 className="font-display text-5xl md:text-6xl">
+              The Person<br />
+              <span className="text-outline">Behind the Code</span>
+            </h2>
+          </div>
+
+          {/* Bio + Portrait */}
+          <div className="reveal grid lg:grid-cols-2 gap-16 mb-24 items-start">
+            <div className="space-y-5 text-[#777] text-lg leading-relaxed">
+              <p>
+                I'm a multidisciplinary developer and designer with a passion for
+                crafting digital experiences that are both technically robust and
+                aesthetically refined.
+              </p>
+              <p>
+                My work lives at the intersection of clean engineering and
+                intentional design — I believe the best products are those where
+                every detail, visible or hidden, has been carefully considered.
+              </p>
+              <p>
+                When I'm not writing code, you'll find me exploring type design,
+                hiking mountain trails, or hunting for the perfect espresso.
+              </p>
+              <div className="flex gap-4 pt-4 flex-wrap">
+                <a
+                  href="/resume.pdf"
+                  className="inline-flex items-center gap-2 px-7 py-3 border border-[#d4af6e] text-[#d4af6e] text-xs tracking-[0.18em] uppercase hover:bg-[#d4af6e] hover:text-[#0e0e0e] transition-all duration-300"
+                >
+                  Download CV <span>↓</span>
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-7 py-3 border border-white/10 text-[#666] text-xs tracking-[0.18em] uppercase hover:border-white/30 hover:text-white transition-all duration-300"
+                >
+                  Let's Talk <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Portrait placeholder */}
+            <div className="relative aspect-[4/5] bg-white/2 border border-white/7 overflow-hidden max-w-xs lg:ml-auto">
+              <div className="absolute inset-0 flex items-end p-6">
+                <div className="space-y-1">
+                  <p className="font-display text-2xl text-white">Adrian Adora</p>
+                  <p className="text-xs tracking-[0.2em] uppercase text-[#d4af6e]">Developer & Designer</p>
+                </div>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-24 h-24 rounded-full border border-white/10 flex items-center justify-center">
+                  <span className="text-[#333] text-xs tracking-widest">Photo</span>
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#d4af6e] via-[#d4af6e]/50 to-transparent" />
+            </div>
+          </div>
+
+          {/* Timeline */}
+          <div className="reveal">
+            <p className="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#d4af6e] mb-10">
+              <span className="w-8 h-px bg-[#d4af6e]" /> Experience
+            </p>
+            <div>
+              {timeline.map((t, i) => (
+                <div
+                  key={i}
+                  className="reveal group border-t border-white/7 py-7 grid grid-cols-[70px_1fr] md:grid-cols-[100px_1fr] gap-8 items-center hover:bg-white/1 transition-colors px-2 -mx-2"
+                  style={{ transitionDelay: `${i * 60}ms` }}
+                >
+                  <span className="font-display text-xl text-[#d4af6e]/40 group-hover:text-[#d4af6e]/70 transition-colors duration-300">
+                    {t.year}
+                  </span>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                    <span className="text-base font-medium tracking-wide group-hover:text-[#d4af6e] transition-colors duration-300">
+                      {t.role}
+                    </span>
+                    <span className="text-xs tracking-[0.18em] uppercase text-[#444]">{t.place}</span>
+                  </div>
+                </div>
+              ))}
+              <div className="border-t border-white/7" />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ════════════ WORK ════════════ */}
-      <section id="work" className="py-32 px-6 md:px-16 lg:px-24">
+      <section id="projects" className="py-32 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           {/* Section header */}
           <div className="reveal flex items-end justify-between mb-20 flex-wrap gap-6">
