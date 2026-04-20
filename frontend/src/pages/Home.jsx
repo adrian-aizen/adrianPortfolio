@@ -28,21 +28,21 @@ const timeline = [
 const projects = [
   {
     num: "01",
-    title: "Brand Identity System",
-    tags: ["Branding", "Design"],
-    desc: "Complete visual language crafted for a fintech startup — logotype, color system, and motion guidelines.",
+    title: "VeriLocal",
+    tags: ["React Native", "Node.js", "Blockchain"],
+    desc: "Blockchain Verification Authentication System for Local Businesses, ensuring trust and transparency in the digital marketplace.",
   },
   {
     num: "02",
-    title: "E-Commerce Platform",
-    tags: ["React", "Node.js"],
-    desc: "Full-stack storefront with real-time inventory, Stripe integration, and a headless CMS.",
+    title: "Parking Reservation System",
+    tags: ["Laravel", "Tailwind CSS", "Breeze Auth"],
+    desc: "Comprehensive parking management solution with real-time space tracking, user reservations, and secure authentication.",
   },
   {
     num: "03",
-    title: "Data Dashboard",
-    tags: ["D3.js", "API"],
-    desc: "Interactive analytics suite visualising millions of rows via custom SVG charts and WebSocket feeds.",
+    title: "Cinema Booking System",
+    tags: ["PHP", "Tailwind CSS", "MySQL"],
+    desc: "User-friendly cinema booking platform with dynamic seat selection, real-time availability, and secure payment integration.",
   },
 ];
 
@@ -362,7 +362,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ════════════ WORK ════════════ */}
+      {/* ════════════ PROJECTS ════════════ */}
       <section id="projects" className="py-32 px-6 md:px-16 lg:px-24">
         <div className="max-w-7xl mx-auto">
           <div className="reveal flex items-end justify-between mb-20 flex-wrap gap-6">
