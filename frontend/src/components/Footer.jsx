@@ -23,6 +23,7 @@ export default function Footer() {
               <a
                 href={s.href}
                 target="_blank"
+                rel="noreferrer"
                 className="text-xs tracking-[0.2em] uppercase text-[#666] hover:text-[#d4af6e] transition-colors duration-300"
               >
                 {s.label}

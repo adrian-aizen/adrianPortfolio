@@ -376,7 +376,7 @@ export default function Home() {
               <h2 className="font-display text-5xl md:text-6xl">Featured<br />Projects</h2>
             </div>
             <a
-              href="#"
+              href="/projects"
               className="text-sm tracking-[0.2em] uppercase text-[#666] hover:text-[#d4af6e] transition-colors flex items-center gap-2"
             >
               All Projects <span>→</span>
