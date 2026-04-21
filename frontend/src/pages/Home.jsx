@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import aboutPic from "../assets/profile.jpeg";
 import profileImg from "../assets/formalpic.png";
+import ContactModal from "../components/ContactModal";
 
 /* ── tiny hook: intersection-based reveal ── */
 function useReveal() {
@@ -88,9 +89,11 @@ const skillGroups = [
 
 export default function Home() {
   useReveal();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <main className="bg-[#0e0e0e] text-white overflow-x-hidden">
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 
       {/* ════════════ HERO ════════════ */}
       <section
@@ -434,12 +437,12 @@ export default function Home() {
             Have a project in mind? I'd love to hear about it. Let's create
             something remarkable together.
           </p>
-          <a
-            href="mailto:hello@portfolio.com"
+          <button
+            onClick={() => setModalOpen(true)}
             className="inline-block mt-4 px-12 py-4 bg-[#d4af6e] text-[#0e0e0e] text-sm tracking-[0.2em] uppercase font-semibold hover:bg-white transition-colors duration-300"
           >
             Start a Conversation
-          </a>
+          </button>
         </div>
       </section>
 
