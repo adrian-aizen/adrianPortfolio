@@ -46,7 +46,7 @@ const projects = [
     title: "Personal Portfolio Website",
     tags: ["React.js", "Tailwind CSS", "Node.js"],
     desc: "Showcase of my work and skills as a web developer, featuring a modern design and smooth user experience.",
-    link: "https://",
+    link: "https://adrian-portfolio-zilch.vercel.app/",
   },
 ];
 
