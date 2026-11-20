@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import aboutPic from "../assets/profile.jpeg";
-import profileImg from "../assets/formalpic.png";
+import aboutPic from "../assets/aboutpic.jpg";
+import profileImg from "../assets/profile.jpeg";
 import ContactModal from "../components/ContactModal";
 
 /* ── tiny hook: intersection-based reveal ── */
@@ -20,7 +20,7 @@ function useReveal() {
 const timeline = [
   {
     year: "2026",
-    role: "B.S. Information Technology Undergraduate",
+    role: "B.S. Information Technology Major in Web Technology",
     place: "University of the Cordilleras",
   },
 ];
@@ -32,25 +32,28 @@ const projects = [
     title: "VeriLocal",
     tags: ["React Native", "Node.js", "Blockchain"],
     desc: "Blockchain Verification Authentication System for Local Businesses, ensuring trust and transparency in the digital marketplace.",
+    link: "https://",
   },
   {
     num: "02",
-    title: "Parking Reservation System",
-    tags: ["Laravel", "Tailwind CSS", "Breeze Auth"],
-    desc: "Comprehensive parking management solution with real-time space tracking, user reservations, and secure authentication.",
+    title: "Balai88 Resort Landing Page & Booking System",
+    tags: ["React.js", "Tailwind CSS", "Firebase"],
+    desc: "Modern landing page and booking system for Balai88 Resort, featuring a responsive design and seamless user experience.",
+    link: "https://balai-booking-system.vercel.app/",
   },
   {
     num: "03",
-    title: "Cinema Booking System",
-    tags: ["PHP", "Tailwind CSS", "MySQL"],
-    desc: "User-friendly cinema booking platform with dynamic seat selection, real-time availability, and secure payment integration.",
+    title: "Personal Portfolio Website",
+    tags: ["React.js", "Tailwind CSS", "Node.js"],
+    desc: "Showcase of my work and skills as a web developer, featuring a modern design and smooth user experience.",
+    link: "https://",
   },
 ];
 
 /* ── skills ticker (kept for marquee) ── */
 const tickerSkills = [
-  "HTML5", "CSS3", "JavaScript", "TypeScript", "Node.js", "Tailwind CSS",
-  "MongoDB", "MySQL", "Git", "Laravel", "PHP",
+  "HTML5", "CSS3", "JavaScript", "TypeScript", "Node.js", "Tailwind CSS", "React.js",
+  "MongoDB", "MySQL", "Git", "Laravel", "PHP", "Firebase", "React Native", "Express.js",
 ];
 
 /* ── Grouped tech stack for skills section ── */
@@ -58,17 +61,17 @@ const skillGroups = [
   {
     label: "Languages",
     icon: "⌨",
-    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "PHP", "Python", "C#"],
+    items: ["HTML5", "CSS3", "JavaScript", "TypeScript", "PHP", "Python",],
   },
   {
     label: "Frontend",
     icon: "🖼",
-    items: ["React", "Vue.js", "React Native", "TailwindCSS", "Vite", "React Router"],
+    items: ["React.js", "Vue.js", "React Native", "TailwindCSS", "Vite", "React Router"],
   },
   {
     label: "Backend",
     icon: "⚙",
-    items: ["Node.js", "Express.js", "Laravel", "Nginx"],
+    items: ["Node.js", "Express.js", ],
   },
   {
     label: "Database",
@@ -78,7 +81,7 @@ const skillGroups = [
   {
     label: "DevOps & Cloud",
     icon: "☁",
-    items: ["Git", "GitHub", "GitLab", "Vercel", "Netlify", "Render", "GitHub Actions"],
+    items: ["Git", "GitHub", "GitLab", "Vercel", "Netlify", "Render", ],
   },
   {
     label: "Tools & Design",
@@ -118,7 +121,6 @@ export default function Home() {
             </p>
 
             <h1 className="hero-title font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
-              Aspiring<br />
               <span className="text-outline">Fullstack</span><br />
               Web Developer
             </h1>
@@ -224,11 +226,12 @@ export default function Home() {
               </p>
               <p>
                 When I'm not writing code, you'll find me exploring type design,
-                hiking mountain trails, or hunting for the perfect espresso.
+                hiking mountain trails, or riding a bike for fun.
               </p>
               <div className="flex gap-4 pt-4 flex-wrap">
                 <a
-                  href="/resume.pdf"
+                  href="/Adrian-CV.pdf"
+                  download="Adrian_CV.pdf"
                   className="inline-flex items-center gap-2 px-7 py-3 border border-[#d4af6e] text-[#d4af6e] text-xs tracking-[0.18em] uppercase hover:bg-[#d4af6e] hover:text-[#0e0e0e] transition-all duration-300"
                 >
                   Download CV <span>↓</span>
@@ -265,7 +268,7 @@ export default function Home() {
           {/* Timeline */}
           <div className="reveal">
             <p className="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-[#d4af6e] mb-10">
-              <span className="w-8 h-px bg-[#d4af6e]" /> Experience
+              <span className="w-8 h-px bg-[#d4af6e]" /> Educational Attainment
             </p>
             <div>
               {timeline.map((t, i) => (
@@ -347,21 +350,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Bottom stat strip */}
-          <div className="reveal mt-16 border-t border-white/8 pt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { num: "30+", label: "Technologies" },
-              { num: "73", label: "Commits Last Year" },
-              { num: "2026", label: "Currently Studying" },
-              { num: "∞", label: "Curiosity" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center space-y-2">
-                <p className="font-display text-3xl md:text-4xl text-[#d4af6e]">{stat.num}</p>
-                <p className="text-xs tracking-[0.2em] uppercase text-[#444]">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -385,14 +373,18 @@ export default function Home() {
 
           <div className="space-y-0">
             {projects.map((p, i) => (
-              <div
+              <a
                 key={p.num}
-                className="reveal group border-t border-white/8 py-10 grid md:grid-cols-[80px_1fr_auto] gap-6 md:gap-12 items-start hover:bg-white/5 transition-colors duration-300 cursor-pointer px-4 -mx-4"
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="reveal group border-t border-white/8 py-10 grid md:grid-cols-[80px_1fr_auto] gap-6 md:gap-12 items-start hover:bg-white/5 transition-colors duration-300 px-4 -mx-4"
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <span className="font-display text-4xl text-[#d4af6e]/30 group-hover:text-[#d4af6e]/70 transition-colors duration-300">
                   {p.num}
                 </span>
+
                 <div className="space-y-3">
                   <h3 className="font-display text-2xl md:text-3xl group-hover:text-[#d4af6e] transition-colors duration-300">
                     {p.title}
@@ -409,10 +401,11 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+
                 <span className="text-[#d4af6e] opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xl mt-1 hidden md:block">
                   ↗
                 </span>
-              </div>
+              </a>
             ))}
             <div className="border-t border-white/8" />
           </div>
